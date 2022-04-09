@@ -34,11 +34,11 @@ public class Principal {
 		for(int i=0;i<array.length;i++) {
 			if(isTriangular(i + 1)) {
 				list.add(array[i]);
-				int smallest = getSmallestNumber(list);
-				smallestList.add(smallest);
+				
+				smallestList.add(getSmallestNumber(list));
 				
 				for (int x : list) {
-					String number = x/10 < 1 ? "0" + Integer.toString(x) : Integer.toString(x);
+					String number = x < 10 ? "0" + Integer.toString(x) : Integer.toString(x);
 					
 					System.out.print(number + " ");
 				}
@@ -93,6 +93,7 @@ public class Principal {
 			return list.get(0);
 		
 		int aux = Integer.MAX_VALUE;
+		
 		for(int i : list) {
 			if(i < aux)
 				aux = i;
